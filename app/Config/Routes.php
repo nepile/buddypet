@@ -19,3 +19,8 @@ $routes->post('/handle-logout', 'AuthController::logout');
 $routes->get('/home', function () {
     return view('admin/home');
 });
+
+$routes->get('/product-management', 'ProductController::index');
+$routes->post('/product-store', 'ProductController::store');
+$routes->put('/product-update/(:any)', 'ProductController::update/$1');
+$routes->delete('/product-delete/(:any)', 'ProductController::delete/$1');
