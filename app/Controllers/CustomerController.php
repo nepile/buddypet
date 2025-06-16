@@ -23,7 +23,7 @@ class CustomerController extends BaseController
     {
         $product = new Product();
         $selectedProduct = $product->where('product_id', $productId)->first();
-
+        
         $data = [
             'title'     => $selectedProduct['name'],
             'product'   => $selectedProduct,

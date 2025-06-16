@@ -20,6 +20,7 @@ class Order extends Model
         'total_amount',
         'price',
         'status',
+        'payment_method',
         'created_at',
         'updated_at',
     ];
@@ -45,7 +46,7 @@ class Order extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
+    protected $beforeInsert   = ['generateUUID'];
     protected $afterInsert    = [];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];

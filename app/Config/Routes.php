@@ -7,8 +7,24 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', "CustomerController::showHomeCustomer");
-$routes->get('/product-detail/(:any)', "CustomerController::showDetailProduct/$1");
+$routes->get('/product-detail/(:any)', "CustomerController::showDetailProduct/$1")
+;
+$routes->get('/cart', "CartController::showCart");
+$routes->post('/add-to-cart', "CartController::addToCart");
+$routes->post('/cart/update', 'CartController::updateCart');
+$routes->get('/cart/remove/(:segment)', 'CartController::removeFromCart/$1');
+$routes->post('/cart/checkout', 'CartController::checkout');
 
+$routes->get('/orders', "OrderController::viewOrders");
+$routes->post('/create-order', "OrderController::createOrder");
+$routes->get('/order-detail/(:any)', "OrderController::viewOrderDetail/$1");
+$routes->get('/order-history', "OrderController::viewOrderHistory");
+
+$routes->get('/payment', "PaymentController::showPaymentPage");
+$routes->post('/payment/confirm', "PaymentController::confirmPayment");
+
+$routes->get('/transactions', "TransactionController::index");
+$routes->post('/transactions/delete/(:any)', "TransactionController::delete/$1");
 
 $routes->get('/login', 'AuthController::showLogin');
 $routes->post('/handle-login', 'AuthController::login');
