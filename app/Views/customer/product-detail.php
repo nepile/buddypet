@@ -1,5 +1,4 @@
 <?= $this->extend('template/main'); ?>
-
 <?= $this->section('content'); ?>
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
@@ -28,18 +27,23 @@
 
                 <p class="text-secondary mt-3">Stok: <?= $product['stock']; ?></p>
                 <p class="text-secondary mt-3">Diterbitkan: <?= date('D, d M Y', strtotime($product['created_at'])); ?> </p>
+                <?= $this->include('template/alert') ?>
                 <hr>
 
                 <div class="mt-2 d-flex flex-xl-row flex-column justify-content-between">
                     <h2 style="color: #EE4E2E; font-weight: bold">Rp <?= number_format($product['price'], 0, ',', '.'); ?></h2>
 
-                    <form action="" method="" class="text-xl-end mt-xl-0 mt-4">
+                    <form action="<?= base_url('/add-to-cart') ?>" method="post" class="text-xl-end mt-xl-0 mt-4">
                         <?= csrf_field(); ?>
-                        <label for="">Jumlah:</label>
-                        <input type="number" class="w-25" name="" id="">
-                        <a href="#">
-                            <button class="btn btn-dark px-3">Tambah Keranjang</button>
-                        </a>
+
+                        <!-- Kirim product_id sebagai hidden input -->
+                        <input type="hidden" name="product_id" value="<?= esc($product['product_id']) ?>">
+
+                        <label for="quantity">Jumlah:</label>
+                        <input type="number" class="w-25" name="quantity" id="quantity" value="1" min="1" required>
+                        <!-- <a href="/"> -->
+                        <button type="submit" class="btn btn-dark px-3">Tambah Keranjang</button>
+                        <!-- </a> -->
                     </form>
                 </div>
             </div>

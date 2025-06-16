@@ -1,14 +1,5 @@
 <?= $this->extend('template/main'); ?>
 <?= $this->section('content'); ?>
-<div class="row bg-secondary">
-    <div class="col bg-secondary" style="height: 8vh;">
-        <div class="d-flex justify-content-center  position-relative" style="top: 15px;">
-            <input type="text" class="form-control w-25 me-2" name="" id="" style="height: 50px;" placeholder="Cari nama produk">
-            <button class="btn px-4 btn-warning">Cari</button>
-        </div>
-    </div>
-</div>
-
 <div class="container my-5">
     <div class="row">
         <h1 class="fs-4">Produk terbaik kami</h1>
@@ -27,7 +18,7 @@
                         </h5>
                         <div class="d-flex justify-content-between">
                             <span>Stok: <?= $product['stock']; ?></span>
-                            <strong class="text-success"><?= number_format($product['price'], 0, ',', '.') ?></strong>
+                            <strong class="text-success">Rp <?= number_format($product['price'], 0, ',', '.') ?></strong>
 
                         </div>
                     </div>

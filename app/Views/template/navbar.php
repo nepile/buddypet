@@ -14,14 +14,12 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 30px;">
                     <li class="nav-item">
                         <a class="nav-link <?= uri_string() == '' ? 'fw-bold' : '' ?>" aria-current="page" href="/">Beranda</a>
-
                     </li>
                     <?php if (session()->has('logged_in')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Keranjang</a>
-                        </li>
+                            <a class="nav-link <?= uri_string() == 'cart' ? 'fw-bold' : '' ?>" aria-current="page" href="/cart">keranjang belanja</a>                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Riwayat Transaksi</a>
+                            <a class="nav-link" href="/transactions">Riwayat Transaksi</a>
                         </li>
                     <?php endif; ?>
                 </ul>

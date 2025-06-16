@@ -36,7 +36,17 @@ class CreateOrderTable extends Migration
             'status' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 50,
-                'default'    => 'pending',
+                'default'    => 'unpaid',
+            ],
+            'payment_method' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 50,
+                'null'       => true,
+            ],
+            'payment_proof' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',

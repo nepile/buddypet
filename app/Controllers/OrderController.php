@@ -36,14 +36,14 @@ class OrderController extends BaseController
 
         // Update cart items to pending order and reduce stock
         foreach ($cartItems as $item) {
-            $this->orderModel->update($item['order_id'], ['status' => 'pending']);
+            $this->orderModel->update($item['order_id'], ['status' => 'unpaid']);
             $this->db->table('products')
-                     ->where('id', $item['product_id'])
+                     ->where('product_id', $item['product_id'])
                      ->set('stock', 'stock - ' . (int)$item['quantity'], false)
                      ->update();
         }
 
-        return redirect()->to('/payment/process/' . $cartItems[0]['order_id'])->with('success', 'Order created successfully');
+        return redirect()->to('/payment')->with('success', 'Order created successfully');
     }
 
     public function viewOrders()
@@ -54,9 +54,10 @@ class OrderController extends BaseController
         }
 
         $data['orders'] = $this->orderModel->select('orders.*, products.name')
-                                           ->join('products', 'products.id = orders.product_id')
+                                           ->join('products', 'products.product_id = orders.product_id')
                                            ->where(['user_id' => $userId, 'status !=' => 'cart'])
                                            ->findAll();
-        return view('orders/view', $data);
+        return view('customer/payment', $data);
     }
+
 }
