@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class User extends Model
 {
     protected $table            = 'users';
-    protected $primaryKey       = 'product_id';
+    protected $primaryKey       = 'user_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
@@ -15,7 +15,8 @@ class User extends Model
     protected $allowedFields    = [
         'email',
         'name',
-        'password'
+        'password',
+        'role'
     ];
 
     protected bool $allowEmptyInserts = false;
