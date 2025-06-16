@@ -48,6 +48,8 @@ abstract class BaseController extends Controller
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
+        helper('url');
+
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 

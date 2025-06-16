@@ -6,9 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', function () {
-    return view('customer/home');
-});
+$routes->get('/', "CustomerController::showHomeCustomer");
 
 $routes->get('/login', 'AuthController::showLogin');
 $routes->post('/handle-login', 'AuthController::login');
