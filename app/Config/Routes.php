@@ -7,8 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', "CustomerController::showHomeCustomer");
-$routes->get('/product-detail/(:any)', "CustomerController::showDetailProduct/$1")
-;
+$routes->get('/product-detail/(:any)', "CustomerController::showDetailProduct/$1");
 $routes->get('/cart', "CartController::showCart");
 $routes->post('/add-to-cart', "CartController::addToCart");
 $routes->post('/cart/update', 'CartController::updateCart');
