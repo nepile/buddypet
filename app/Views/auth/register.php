@@ -4,7 +4,7 @@
 <div class="row justify-content-center" style="height: 100vh;">
   <div class="col-xl-6" style="background: orangered"></div>
   <div class="col-xl-6 d-none d-xl-inline-block bg-light"></div>
-  <div class="col-xl-8 col-11 p-0 card" style="position: absolute; top: 45px; background: #fff; border:0; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;">
+  <div class="col-xl-8 col-11 p-0 card" style="position: absolute; top: 60px; background: #fff; border:0; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;">
     <div class="card-body p-0 d-flex">
       <div class="col-xl-6 d-none d-xl-flex">
         <img src="<?= base_url('img/dog3.jpg'); ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px 0 0 5px" alt="">

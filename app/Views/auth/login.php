@@ -9,7 +9,7 @@
 
   <div class="col-12 col-md-6 d-flex align-items-center justify-content-center bg-white">
     <div class="form-container p-4 p-md-5 mx-md-5">
-      <h1 class="h2 fw-bold mb-3 text-dark">Login</h1>
+      <h1 class="h2 fw-bold mb-3 text-dark"><a href="/" style="color: orangered;">Buddypet.</a> | Login</h1>
       <p class="text-muted mb-4">Silakan login untuk melanjutkan ke halaman utama. Jika belum punya akun, silakan daftar terlebih dahulu.</p>
 
       <?= $this->include('template/alert'); ?>
