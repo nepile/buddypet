@@ -57,8 +57,8 @@ class Order extends Model
     // UUID generator
     protected function generateUUID(array $data)
     {
-        if (empty($data['data']['id'])) {
-            $data['data']['id'] = \Ramsey\Uuid\Uuid::uuid4()->toString();
+        if (empty($data['data']['order_id'])) {
+            $data['data']['order_id'] = \Ramsey\Uuid\Uuid::uuid4()->toString();
         }
         return $data;
     }

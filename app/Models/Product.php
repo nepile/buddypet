@@ -49,8 +49,8 @@ class Product extends Model
     // UUID generator
     protected function generateUUID(array $data)
     {
-        if (empty($data['data']['id'])) {
-            $data['data']['id'] = \Ramsey\Uuid\Uuid::uuid4()->toString();
+        if (empty($data['data']['product_id'])) {
+            $data['data']['product_id'] = \Ramsey\Uuid\Uuid::uuid4()->toString();
         }
         return $data;
     }
