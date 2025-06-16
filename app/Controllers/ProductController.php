@@ -14,13 +14,13 @@ class ProductController extends BaseController
         $this->product = new Product();
     }
 
-    public function index()
+    public function showProductManagement()
     {
         $data = [
             'title'     => 'Manajemen Produk',
             'products'  => $this->product->findAll(),
         ];
-        return view('products/index', $data);
+        return view('admin/product-management', $data);
     }
 
     public function store()
@@ -41,7 +41,7 @@ class ProductController extends BaseController
             'image'       => $imageName,
         ]);
 
-        return redirect()->back();
+        return redirect()->to('product-management')->with('success', 'Berhasil menambahkan produk.');
     }
 
     public function update($productId)
@@ -66,7 +66,7 @@ class ProductController extends BaseController
             'image'       => $imageName,
         ]);
 
-        return redirect()->back();
+        return redirect()->to('product-management')->with('info', 'Berhasil memperbarui produk.');;
     }
 
     public function delete($productId)

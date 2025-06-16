@@ -37,7 +37,7 @@ class AuthController extends Controller
                 $session->set($sessionData);
 
                 if ($user['role'] === 'admin') {
-                    return redirect()->to('/home');
+                    return redirect()->to('/product-management');
                 } elseif ($user['role'] === 'customer') {
                     return redirect()->to('/');
                 }
