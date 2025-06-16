@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', "CustomerController::showHomeCustomer");
+$routes->get('/product-detail/(:any)', "CustomerController::showDetailProduct/$1");
+
 
 $routes->get('/login', 'AuthController::showLogin');
 $routes->post('/handle-login', 'AuthController::login');

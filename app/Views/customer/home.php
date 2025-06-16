@@ -15,23 +15,25 @@
     </div>
 
     <div class="row" style="row-gap: 25px;">
-        <a href="" class="col-xl-3 text-decoration-none">
-            <div class="card">
-                <div class="card-body p-0" style="height: 30vh;">
-                    <img src="" class="object-fit-cover rounded h-100 w-100" alt="">
-                </div>
-                <div class="card-footer">
-                    <h5>
-                        Produk 1
-                    </h5>
-                    <div class="d-flex justify-content-between">
-                        <span>Stok: 2</span>
-                        <strong class="text-success">Rp 200.000</strong>
+        <?php foreach ($products as $product) : ?>
+            <a href="<?= base_url('/product-detail/' . $product['product_id']) ?>" class="col-xl-3 text-decoration-none">
+                <div class="card">
+                    <div class="card-body p-0" style="height: 30vh;">
+                        <img src="<?= base_url('img/products/' . $product['image']); ?>" class="object-fit-cover rounded h-100 w-100" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h5>
+                            <?= $product['name']; ?>
+                        </h5>
+                        <div class="d-flex justify-content-between">
+                            <span>Stok: <?= $product['stock']; ?></span>
+                            <strong class="text-success"><?= number_format($product['price'], 0, ',', '.') ?></strong>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        <?php endforeach; ?>
     </div>
 </div>
 <?= $this->endSection(); ?>
