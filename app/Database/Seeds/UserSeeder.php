@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
             'email'     => 'neville@gmail.com',
             'name'  => 'Neville Jeremy',
             'password'  => password_hash('123neville456', PASSWORD_DEFAULT),
-            'role'  => 'customer'
+            'role'  => 'admin'
         ]);
     }
 }
